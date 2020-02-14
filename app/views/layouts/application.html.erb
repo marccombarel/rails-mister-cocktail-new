@@ -12,7 +12,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- PUT A RENDER -->
+    <div class="container">
+
+      <div class="sidenav">
+        <div class="side-nav-container">
+          <img src="https://cdn.dribbble.com/users/227188/screenshots/9781247/media/534761ac76c1eb5a9bd420acf823f0f2.gif" class="logo">
+          <h6><%= link_to '+ Add Cocktail', new_cocktail_path %></h6>
+          <h6><%= link_to 'Back to cocktails list',  cocktails_path %></h6>
+          <h6>+ Add Ingredient</h6>
+          <h6>Search bar</h6>
+        </div>
+      </div>
+
+      <%= yield %>
+    </div>
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

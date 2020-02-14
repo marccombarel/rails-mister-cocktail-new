@@ -1,0 +1,23 @@
+<h1><%= @cocktail.name %></h1>
+<br>
+
+<div class='container recipee'>
+  <% @cocktail.doses.reverse.each do |dose| %>
+    <span>
+      <ul>
+        <p>Description: <%= dose.description %></p>
+        <p><%= dose.ingredient.name %></p>
+      </ul>
+    </span>
+  <% end %>
+</div>
+
+<br>
+
+<div class="container form">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient, multiple: true%>
+    <%= f.button :submit, class: 'btn btn-primary w-100' %>
+  <% end %>
+</div>

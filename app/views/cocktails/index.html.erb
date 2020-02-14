@@ -1,0 +1,13 @@
+<h1>Cocktails</h1>
+
+  <div class="row">
+  <% @cocktails.each do |cocktail| %>
+      <div class="col-6">
+        <div class="cocktail-card">
+          <p><strong><%= link_to cocktail.name, cocktail_path(cocktail) %></strong></p>
+          <button class='btn btn-primary'><%= link_to 'Edit', cocktail_path(cocktail) %></button>
+          <button class='btn btn-danger'><%= link_to 'Delete', cocktail_path(cocktail), method: :delete %></button>
+        </div>
+      </div>
+  <% end %>
+  </div>
